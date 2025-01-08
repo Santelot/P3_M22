@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P3-M22</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+     <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const step4Activity3 = document.querySelector('#activity-3 .step-4');
+
+             if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                 if (step4Activity3) step4Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'none';
+            } else {
+                 if (activity2) activity2.style.display = 'block';
+                 if (step4Activity3) step4Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P3-M22</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <!-- Aquí se insertarán las actividades -->
+         <!-- Actividad 0 -->
+        <div id="activity-0" class="activity" data-time="N/A">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                   <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Verificación inicial del equipo y materiales necesarios para completar la misión.
+                </div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                            Verificar que todos los dispositivos (tabletas o computadoras) estén encendidos, conectados a internet y que el editor de MakeCode esté abierto en modo "Crear". Confirmar que los Microbits estén disponibles y que el espacio esté organizado para trabajar cómodamente. Verificar que las baterías estén cargadas.
+                        </td>
+                        <td style="padding: 10px; vertical-align: top;">No se utiliza diálogo con los estudiantes en esta etapa.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity" data-time="2">
+            <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Bienvenida al grupo, agradecimiento y presentación de los objetivos del día.
+                </div>
+            </div>
+            <div id="activity_1_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                         <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                         <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                     </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 1): "¡Bienvenidos, Genios de los Sensores!" y saludar a los estudiantes con entusiasmo, mencionando el tema del día.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Hola, Genios de los Sensores! 🌟 ¡Qué emoción verlos listos para explorar el mundo de los sensores con Micro:bit! Hoy vamos a crear proyectos increíbles que reaccionen a la luz y la temperatura. ¡Prepárense para programar, experimentar y divertirse con la electrónica!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar (Diapositiva 2): "¡Mi Nivel de Sensibilidad!" y pedir a los estudiantes que indiquen su estado de ánimo usando poses temáticas relacionadas con los sensores.</td>
+                         <td style="padding: 10px; vertical-align: top;">Antes de comenzar, ¡necesito saber cómo se sienten mis genios de los sensores! ☀️ Si están listos para programar con Micro:bit y los sensores, ¡levanten los brazos como si fueran rayos de luz detectando todo! 🔆 Si necesitan un poquito más de energía, ¡crucen los brazos como si fueran termómetros midiendo la temperatura del ambiente! 🌡️ ¡A ver esas poses llenas de sensibilidad!</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0.5 minutos):</strong> Proyectar (Diapositiva 3): "¡Ritual de Gratitud Sensorial!" y guiar a los estudiantes en el ritual.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Excelente, Genios! Ahora, ¡es momento de nuestro ritual Gnius! Juntemos nuestras manos y digamos juntos: '¡Gracias por estar aquí, Genios! Hoy vamos a descubrir el mundo a través de los sensores de Micro:bit. ¡A dar lo mejor de nosotros y a divertirnos programando!'</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0.5 minutos):</strong> Proyectar (Diapositiva 4): "¡Objetivos Sensoriales de Hoy!" y explicar los objetivos de la misión de manera clara y sencilla.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Y ahora, los objetivos de nuestra misión de hoy! 1. Vamos a practicar cómo crear programas que lean los valores de los sensores de luz y temperatura de nuestro Micro:bit. 2. ¡Vamos a hacer que nuestros Micro:bits reaccionen a la luz y la temperatura y muestren información en la pantalla LED! ¿Listos para este reto sensorial?</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 2 -->
+        <div id="activity-2" class="activity" data-time="5">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                <div class="title">💡 Actividad 2: Brain Vitamin ⏰ Tiempo: 5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Juego para imitar el comportamiento de los sensores.
+                </div>
+            </div>
+            <div id="activity_2_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 5): "¡Activando Nuestros Sentidos Electrónicos con El Sensor Imitador!" y explicar que jugarán a imitar el comportamiento de los sensores para activar el cerebro.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios de los Sensores! 🚀 Vamos a activar nuestros cerebros para programar con Micro:bit y los sensores. Hoy jugaremos a "El Sensor Imitador" para que nuestros cuerpos simulen cómo actúan los sensores y nuestras mentes se preparen para programar. ¿Listos para activar sus sentidos electrónicos?</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1.5 minutos):</strong> Proyectar (Diapositiva 6): "¡Reglas del Sensor Imitador!" y explicar las reglas del juego y dar ejemplos de movimientos para imitar los sensores.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Ahora vamos a jugar a "El Sensor Imitador"! 🎮 Yo diré el nombre de un sensor (luz o temperatura) y un valor (alto o bajo) y ustedes imitarán cómo reacciona el sensor. Por ejemplo, si digo "Luz alta", pueden levantar los brazos como si recibieran mucha luz. Si digo "Temperatura baja", pueden abrazarse como si tuvieran frío. ¡A imitar con lógica y sensores!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (2.5 minutos):</strong> Proyectar (Diapositiva 7): "¡Los Sensores en Juego!" y guiar a los estudiantes en el juego, alternando los sensores y los valores y animándolos a participar.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Increíble, Genios! Ahora, a jugar a "El Sensor Imitador". ⏱️ Yo diré un sensor y un valor, y ustedes lo imitarán. ¡Prepárense para moverse, pensar y simular el mundo de los sensores! (El profesor guía el juego, alternando los valores y los sensores). ¡Compartan sus simulaciones sensoriales y prepárense para practicar sus proyectos con lógica y sensores en MakeCode!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 3 -->
+        <div id="activity-3" class="activity" data-time="31">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 31 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Crear proyectos con sensores utilizando MakeCode.
+                </div>
+            </div>
+            <div id="activity_3_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1,00 minuto):</strong> Proyectar (Diapositiva 8): "¡El Gran Desafío Sensorial!" y presentar el desafío con la temática unificada, los nombres de los retos y los tres niveles (Rookie, Master, Hacker).</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios de los sensores, ha llegado el momento de programar con Micro:bit y nuestros sentidos electrónicos! 🚀 Hoy vamos a hacer magia con la electrónica, la lógica y los sensores. Tenemos tres desafíos emocionantes: '¡Sensor en Acción!' (Rookie), '¡Medidor Sensorial Interactivo!' (Master) y '¡Sistema Sensorial Reactivo Completo!' (Hacker). ¡A elegir su reto sensorial y a programar!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (2 minutos):</strong> Proyectar (Diapositiva 9): "¡Detalles de los Retos Sensoriales!" Describir los pasos y metas específicas de cada nivel, utilizando el texto original y resaltando en negrita las partes clave: Objetivo, Instrucciones, Condiciones y Consejo.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Aquí están los detalles de cada desafío para que elijan su camino!
+                            <br><br>
+                            <strong>Nivel Rookie (Básico): '¡Sensor en Acción!'</strong>
+                            <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Crear un programa que lea datos de un sensor y muestre un mensaje o icono en la pantalla LED según el valor obtenido.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Instrucciones:</span> Elige un sensor incorporado del Micro:bit (temperatura o luz). Programa el Micro:bit para leer los valores del sensor. Muestra un icono o mensaje en la pantalla LED cuando el valor sea mayor o menor a un límite que definas (por ejemplo, luz baja o alta).
+                            <br>
+                            <span style="color: red; font-weight: bold;">Condiciones:</span> Usa bloques de lectura del sensor para obtener los datos. Configura una condición simple para decidir cuándo mostrar el mensaje o icono.
+                            <br>
+                            <span style="color: red; font-weight: bold;">Consejo:</span> Usa el bloque "si... entonces" para programar la condición y prueba con diferentes límites para observar los resultados.
+                            <br><br>
+                            <strong>Nivel Master (Intermedio): '¡Medidor Sensorial Interactivo!'</strong>
+                             <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Crear un programa que muestre en la pantalla LED un indicador dinámico basado en los valores del sensor.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Instrucciones:</span> Usa el mismo sensor que en el nivel Rookie (luz o temperatura). Diseña un programa donde los valores del sensor controlen lo que se muestra en la pantalla: Por ejemplo, más luz equivale a más LEDs encendidos. O temperaturas más altas hacen que el mensaje en pantalla cambie. Incluye una pausa para actualizar los valores constantemente.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Condiciones:</span> Usa bloques de bucles para actualizar la pantalla en tiempo real. Muestra al menos tres estados diferentes según los valores del sensor.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Consejo:</span> Piensa en una escala de medición (baja, media, alta) para representar los valores en la pantalla LED de manera clara.
+                             <br><br>
+                            <strong>Nivel Hacker (Avanzado): '¡Sistema Sensorial Reactivo Completo!'</strong>
+                             <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Crear un programa que responda dinámicamente a los valores del sensor y muestre diferentes mensajes o iconos en la pantalla LED según el rango de valores detectado.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Instrucciones:</span> Usa un sensor interno del Micro:bit (luz o temperatura). Diseña un programa que: Lea los valores del sensor al iniciar el programa o al presionar un botón. Muestre un mensaje o icono específico según el rango de valores detectado: Valor bajo: Muestra un icono o mensaje (por ejemplo, "Frío" o una nube). Valor medio: Muestra otro icono o mensaje (por ejemplo, "Templado" o un sol). Valor alto: Muestra un icono o mensaje especial (por ejemplo, "¡Calor!" o una llama). Opcionalmente, usa una breve pausa entre los mensajes para permitir cambios.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Condiciones:</span> El programa debe incluir al menos tres respuestas diferentes (para rangos bajos, medios y altos). Las acciones deben activarse sin necesidad de ciclos, utilizando bloques condicionales simples.
+                            <br>
+                            <span style="color: red; font-weight: bold;">Consejo:</span> Usa bloques como "si... entonces... si no" para gestionar los rangos de valores y prueba los límites con el simulador antes de transferir el programa al Microbit.</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (20 minutos):</strong> Proyectar (Diapositiva 10): "¡A Programar con Sensores, Genios!" Temporizador de 20 minutos con recordatorio de los niveles y la temática.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Es su turno, genios de los sensores! 🚀 Tienen 20 minutos para practicar cómo programar con Micro:bit y los sensores. Recuerden los nombres de sus retos y dejen que su creatividad guíe sus proyectos. ¡La magia de los sensores está en sus manos!</td>
+                    </tr>
+                     <tr  class="step-4">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (5 minutos):</strong> Proyectar (Diapositiva 11): "¡Cargando la Magia Sensorial!" Explicación de cómo conectar y transferir el código a Micro:bit, con instrucciones separadas para computadora y iPad.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Genios de los sensores, llegó el momento de cargar su magia a Micro:bit! 💻 Si están en una computadora: Conecten su Micro:bit con el cable USB. Descarguen el archivo .hex generado por MakeCode. Arrastren el archivo .hex a su Micro:bit. 📱 Si están en un iPad: Conecten su Micro:bit por Bluetooth. Sigan las instrucciones de MakeCode para transferir el programa. ¡A cargar su magia y a ver sus Micro:bits en acción!</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (3 minutos):</strong> Proyectar (Diapositiva 12): "¡Micro:bit con Sensores en Acción!" Temporizador de 3 minutos para transferir los programas.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Tienen 3 minutos para cargar sus programas a Micro:bit y ver cómo reaccionan sus sensores! ⏱️ ¡A programar y a encender sus creaciones sensoriales!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (1 minuto):</strong> Proyectar (Diapositiva 13): "¡Misión Sensorial Cumplida, Genios!" Revisar los objetivos específicos del desafío con los estudiantes, según cada nivel y reto.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Hagamos un último chequeo: ¿Lograron crear programas que lean los valores de los sensores de luz o temperatura en sus Micro:bit? ¿Hicieron que sus Micro:bits reaccionaran a los cambios del entorno y mostraran la información en la pantalla LED? ¡Estoy seguro de que superaron todas las expectativas! ¡Felicidades, genios de los sensores!”</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity" data-time="7">
+            <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Colaboración para mejorar proyectos con sensores, usando la metodología Think-Pair-Share.
+                </div>
+            </div>
+            <div id="activity_4_content" class="content">
+                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 14): "¡Uniendo Mentes Sensoriales!" Mostrar instrucciones para formar parejas y explicar que trabajarán con la metodología Think-Pair-Share, enfocándose en la reflexión y la mejora de los programas.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios de los sensores, es hora de unir nuestras mentes brillantes! 🌟 Formen parejas y prepárense para trabajar con la metodología Think-Pair-Share. ¡Juntos vamos a reflexionar, compartir ideas y mejorar nuestros programas de Micro:bit con sensores!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar (Diapositiva 15): "¡Parejas Sensoriales en 30 Segundos!" Temporizador de 30 segundos para formar los equipos.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Tienen 30 segundos para unirse a su compañero de programación sensorial! ⏱️ Busquen su pareja rápidamente y prepárense para una lluvia de ideas creativas. ¡Parejas listas, programas listos para mejorar!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar (Diapositiva 16): "¡Think-Pair-Share Sensorial!" Explicar los pasos de la metodología: pensar individualmente, compartir en pareja y compartir con el grupo.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Programadores de la electrónica, vamos a usar el poder del Think-Pair-Share! 💡 Primero, piensen individualmente en cómo mejorarían la interacción de sus programas con los sensores. Luego, compartan esas ideas con su pareja y elijan las mejores. Finalmente, compartiremos nuestras conclusiones con todo el grupo. ¡Prepárense para reflexionar, colaborar y mejorar!</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (3 minutos):</strong> Proyectar (Diapositiva 17): "¡Reflexión y Mejora Sensorial!" Temporizador de 3 minutos para la actividad de Think-Pair, con recordatorio de los pasos y los objetivos.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Manos a la obra, programadores sensoriales! ⏱️ Tienen 3 minutos para reflexionar y compartir ideas con su pareja. Recuerden que el objetivo es mejorar la interacción de sus programas con los sensores. ¡Compartan sus ideas y prepárense para llevar sus programas al siguiente nivel!</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (2 minutos):</strong> Proyectar (Diapositiva 18): "¡Compartiendo Sabiduría Sensorial!" Tiempo para compartir las ideas y conclusiones del trabajo en equipo con todo el grupo.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Es momento de compartir nuestras ideas y aprendizajes con todo el grupo, genios! 🌟 Compartan sus conclusiones y expliquen cómo lograron mejorar la interacción de sus programas con los sensores. ¡Juntos podemos inspirarnos y aprender de cada proyecto!</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (1 minuto):</strong> Proyectar (Diapositiva 19): "¡Reflexiones Sensoriales en Equipo!" Preguntas para reflexionar sobre la experiencia de trabajar en equipo con la metodología Think-Pair-Share.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Reflexionemos sobre esta aventura de programación sensorial! 🌟 ¿Qué aprendieron al trabajar con la metodología Think-Pair-Share? ¿Cómo los ayudó el trabajo en equipo a mejorar la interacción de sus programas con los sensores? ¿Qué consejo le darían a otros programadores que trabajan con sensores? ¡Compartan sus ideas y celebremos el poder de la colaboración sensorial!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 5 -->
+        <div id="activity-5" class="activity" data-time="4">
+            <div class="banner" onclick="toggleContent('activity_5_content')">
+                <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Reflexión final y organización del espacio de trabajo.
+                </div>
+            </div>
+             <div id="activity_5_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 20): "¡Misión Sensorial Cumplida, Programadores!" Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron, enfocándose en la práctica de la interacción con sensores con Micro:bit.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios de los sensores, llegó el momento de celebrar nuestros increíbles proyectos! 🌟 Revisemos juntos nuestros objetivos: ¿Practicamos cómo crear programas que lean los valores de los sensores de luz y temperatura de nuestro Micro:bit? ¿Hicimos que nuestros Micro:bits reaccionaran a la luz y la temperatura y mostraran información en la pantalla LED? ¡Estoy seguro de que cada uno hizo un trabajo brillante! ¿Cómo se sienten al respecto?</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos, reforzando el trabajo en equipo, el aprendizaje mutuo y la creatividad en la programación con sensores en Micro:bit.</td>
+                        <td style="padding: 10px; vertical-align: top;">Hoy, todos fueron increíbles programadores sensoriales. Dieron vida a sus Micro:bits con programas creativos que reaccionaban a la luz y la temperatura, exploraron el poder de la lógica y el trabajo en equipo, y se ayudaron mutuamente como verdaderos genios. ¡Estoy muy orgulloso de todos los programadores sensoriales que hay aquí! ¡Un aplauso para su creatividad, lógica, dedicación y capacidad para aprender juntos!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (3 minutos):</strong> Proyectar (Diapositiva 21): "¡Honremos Nuestro Espacio Sensorial!" Dar instrucciones para recoger los materiales utilizados y organizar el espacio de trabajo.</td>
+                        <td style="padding: 10px; vertical-align: top;">Ahora, como verdaderos programadores sensoriales, debemos honrar nuestro espacio de trabajo. Recojan sus Micro:bits, tabletas, sensores y todos los materiales que usamos, y dejen el aula lista para nuevas aventuras de programación. ¡Recuerden que cuidar nuestro espacio es parte de la magia de la electrónica y los sensores!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+   </div> <!-- Cierre del container -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
